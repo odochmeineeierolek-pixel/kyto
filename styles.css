@@ -1,0 +1,17 @@
+:root{--bg:#0b0b0f;--panel:#14141b;--red:#e5383b;--yellow:#f4c430;--tx:#e8e8ee;--mut:#8a8a99}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:Segoe UI,system-ui,sans-serif}
+.lock{height:100vh;display:grid;place-content:center;justify-items:center;gap:18px}
+.dots{display:flex;gap:12px;height:16px}.dot{width:14px;height:14px;border-radius:50%;border:1px solid var(--mut)}.dot.on{background:var(--yellow);border-color:var(--yellow)}
+.pad{display:grid;grid-template-columns:repeat(3,64px);gap:10px}
+button{background:var(--panel);color:var(--tx);border:1px solid #26262f;border-radius:10px;padding:14px;cursor:pointer;font-size:16px;transition:.15s}
+button:hover{border-color:var(--red)}input{background:var(--panel);color:var(--tx);border:1px solid #26262f;border-radius:8px;padding:10px}
+.err{color:var(--red);min-height:20px;font-size:14px}.note{color:var(--mut);font-size:12px;max-width:340px;text-align:center}
+.shell{display:flex;height:100vh}.side{width:60px;background:var(--panel);display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:12px}
+.side button{width:42px;height:42px;padding:0;border:none;background:none}.side button.act{background:#22222c;box-shadow:inset 3px 0 var(--red)}
+.main{flex:1;padding:28px;overflow:auto}
+.ring{width:200px;height:200px;border-radius:50%;margin:20px auto;display:grid;place-content:center;font-weight:700;letter-spacing:.4em;border:3px solid var(--red);box-shadow:0 0 30px #e5383b44;transition:.4s}
+.ring.listening{animation:pulse 1.4s infinite}.ring.thinking{border-color:var(--yellow);border-top-color:transparent;animation:spin 1s linear infinite}
+.ring.speaking{animation:pulse .6s infinite}.ring.working{border-style:dashed;border-color:var(--yellow)}.ring.error{border-color:#ff0000;box-shadow:0 0 30px #f00}
+@keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 50px #e5383b88}}@keyframes spin{to{transform:rotate(360deg)}}
+.row{display:flex;justify-content:space-between;align-items:center;background:var(--panel);padding:12px 16px;border-radius:10px;margin-bottom:8px}
+.states{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
